@@ -7,6 +7,8 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
+  color: #1a1a1a;
+  background-color: #eee;
 }
 
 /*------------------*/
@@ -140,8 +142,9 @@ body {
 
 .about__container {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
+  column-gap: 30px;
 }
 
 .about__image {
@@ -171,6 +174,8 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 600px;
+  line-height: 1.5;
 }
 
 /*------------------*/
@@ -245,6 +250,7 @@ body {
 .item-article-1 {
   background: url('../img/works/articles/01.jpg') center no-repeat;
   background-size: cover;
+  
 }
 .item-article-2 {
   background: url('../img/works/articles/02.jpg') center no-repeat;
@@ -306,6 +312,7 @@ body {
   background: url('../img/works/email/02.jpg') center no-repeat;
   background-size: cover;
 }
+
 .items-works__item::before {
   content: '';
   position: absolute;
@@ -313,7 +320,28 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  /*background-color: rgba(0, 0, 0, 0.6);*/
+  background: inherit;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.items-works__item:hover::before {
+  transform: scale(1.1);
+}
+.items-works__item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Затемнение */
+  transition: background 0.3s ease-in-out;
+}
+.items-works__item:hover::after {
+  background: rgba(0, 0, 0, 0.4); /* Ослабляем затемнение при наведении */
 }
 .items-works__content {
   height: 100%;
